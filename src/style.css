@@ -30,7 +30,7 @@ li {
 }
 .temp-setting {
   position: relative;
-  top: -20px;
+  top: -18px;
   left: -10px;
 }
 #description {
@@ -39,6 +39,10 @@ li {
 }
 #temp-degree {
   position: relative;
-  top: 10px;
+  top: 15px;
+  margin-right: 5px;
   font-size: 60px;
+}
+#icon {
+  margin-right: 0px;
 }
