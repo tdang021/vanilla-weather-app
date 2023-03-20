@@ -18,6 +18,28 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
+          <form id="search-form">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  type="text"
+                  placeholder="Type a city"
+                  class="form-control"
+                  autocomplete="off"
+                  autofocus="on"
+                  id="search-city-input"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-primary"
+                  width="100"
+                />
+              </div>
+            </div>
+          </form>
           <div class="location-date">
             <h1 id="city">Charleston</h1>
             <h3 id="date">Monday, March 19 8:00am</h3>
@@ -26,7 +48,7 @@
           <div class="row">
             <div class="col-6">
               <div class="weather-temperature">
-                <img src="" width="100" id="icon" alt="sunny-cloudy" />
+                <img src="" width="100" id="icon" alt="" />
                 <span id="temp-degree">56</span>
                 <span class="temp-setting">°F | °C</span>
               </div>

@@ -51,7 +51,18 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-let apiKey = "91d9a2c92e23f81f6af46fe1bf68b707";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Charleston&limit=5&appid=${apiKey}&units=imperial`;
+function search(city) {
+  let apiKey = "91d9a2c92e23f81f6af46fe1bf68b707";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&limit=5&appid=${apiKey}&units=imperial`;
 
-axios.get(apiUrl).then(displayTemperature);
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function newCity(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#search-city-input");
+  search(cityInput.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", newCity);
