@@ -3,17 +3,18 @@ body {
 }
 h1 {
   color: purple;
-  line-height: 35px;
+  line-height: 25px;
 }
 h3 {
   font-size: 20px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 ul {
   margin-top: 24px;
 }
 li {
   list-style: none;
+  font-size: 14px;
 }
 .weather-temperature img {
   margin-right: 6px;
@@ -27,13 +28,17 @@ li {
   border: 1px solid gray;
   border-radius: 5px;
 }
-.temp-degree {
+.temp-setting {
+  position: relative;
+  top: -20px;
+  left: -10px;
+}
+#description {
+  font-size: 18px;
+  text-transform: capitalize;
+}
+#temp-degree {
   position: relative;
   top: 10px;
   font-size: 60px;
-}
-.temp-setting {
-  position: relative;
-  top: -23px;
-  left: 5px;
 }

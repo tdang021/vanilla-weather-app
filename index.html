@@ -11,6 +11,7 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
@@ -18,22 +19,23 @@
       <div class="weather-app-wrapper">
         <div class="weather-app">
           <div class="location-date">
-            <h1>Charleston</h1>
-            <h3>Monday, March 19 8:00am</h3>
+            <h1 id="city">Charleston</h1>
+            <h3 id="date">Monday, March 19 8:00am</h3>
+            <div id="description">Cloudy</div>
           </div>
           <br />
           <div class="row">
             <div class="col-6">
               <div class="weather-temperature">
                 <img src="img/sun-cloud.png" width="80" alt="sunny-cloudy" />
-                <span class="temp-degree">56</span>
+                <span id="temp-degree">56</span>
                 <span class="temp-setting">°F | °C</span>
               </div>
             </div>
             <div class="col-6">
               <ul>
-                <li>Precipition: 0%</li>
-                <li>Humidity: 37%</li>
+                <li>Humidity: <span id="humidity">37</span>%</li>
+                <li>Wind: <span id="wind">5</span> MPH</li>
               </ul>
             </div>
           </div>
