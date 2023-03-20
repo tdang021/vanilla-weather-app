@@ -95,3 +95,32 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 search("Charleston");
+
+function changeLocalTemp(event) {
+  function showPosition(position) {
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+
+    function changeLocalCity(response) {
+      let changeCurrentCity = document.querySelector("#city");
+      changeCurrentCity.innerHTML = response.data[0].name;
+    }
+    let apiKey = "91d9a2c92e23f81f6af46fe1bf68b707";
+    let locationApiUrl = `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+
+    axios.get(locationApiUrl).then(changeLocalCity);
+    function showCurrentLocationTemp(response) {
+      let currentLocationTemp = Math.round(response.data.main.temp);
+      let currentLocalTemp = document.querySelector("#temp-degree");
+      currentLocalTemp.innerHTML = `${currentLocationTemp}`;
+    }
+
+    let currentApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`;
+
+    axios.get(currentApiUrl).then(showCurrentLocationTemp);
+  }
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
+let currentButton = document.querySelector("#current-location-button");
+currentButton.addEventListener("click", changeLocalTemp);

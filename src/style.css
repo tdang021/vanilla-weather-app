@@ -42,6 +42,18 @@ a {
   color: black;
   cursor: default;
 }
+.cloudy-day {
+  width: 60px;
+}
+.forecast-days {
+  font-size: 16px;
+  text-align: center;
+}
+.hi-low {
+  font-size: 11px;
+  text-align: center;
+  line-height: 25px;
+}
 
 #description {
   font-size: 20px;

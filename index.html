@@ -20,7 +20,7 @@
         <div class="weather-app">
           <form id="search-form">
             <div class="row">
-              <div class="col-9">
+              <div class="col-6">
                 <input
                   type="text"
                   placeholder="Type a city"
@@ -30,7 +30,7 @@
                   id="search-city-input"
                 />
               </div>
-              <div class="col-3">
+              <div class="col-2">
                 <input
                   type="submit"
                   value="Search"
@@ -38,8 +38,18 @@
                   width="100"
                 />
               </div>
+              <div class="col-4">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  id="current-location-button"
+                >
+                  Current Location
+                </button>
+              </div>
             </div>
           </form>
+
           <div class="location-date">
             <h1 id="city">Charleston</h1>
             <h3 id="date">Monday, March 19 8:00am</h3>
@@ -64,6 +74,40 @@
               </ul>
             </div>
           </div>
+          <hr />
+          <div class="row">
+            <div class="col-2 forecast-days">Wed</div>
+            <div class="col-2 forecast-days">Thurs</div>
+            <div class="col-2 forecast-days">Fri</div>
+            <div class="col-2 forecast-days">Sat</div>
+            <div class="col-2 forecast-days">Sun</div>
+            <div class="col-2 forecast-days">Mon</div>
+
+            <div class="col-2">
+              <img src="img/sun-cloud.png" class="cloudy-day" />
+            </div>
+            <div class="col-2">
+              <img src="img/sun-cloud.png" class="cloudy-day" />
+            </div>
+            <div class="col-2">
+              <img src="img/sun-cloud.png" class="cloudy-day" />
+            </div>
+            <div class="col-2">
+              <img src="img/sun-cloud.png" class="cloudy-day" />
+            </div>
+            <div class="col-2">
+              <img src="img/sun-cloud.png" class="cloudy-day" />
+            </div>
+            <div class="col-2">
+              <img src="img/sun-cloud.png" class="cloudy-day" />
+            </div>
+            <div class="col-2 hi-low">72°F / 57°C</div>
+            <div class="col-2 hi-low">67°F / 49°C</div>
+            <div class="col-2 hi-low">53°F / 33°C</div>
+            <div class="col-2 hi-low">49°F / 39°C</div>
+            <div class="col-2 hi-low">61°F / 41°C</div>
+            <div class="col-2 hi-low">57°F / 43°C</div>
+          </div>
         </div>
         <small>
           <a
@@ -75,6 +119,7 @@
         >
       </div>
     </div>
+
     <script src="src/app.js"></script>
   </body>
 </html>
