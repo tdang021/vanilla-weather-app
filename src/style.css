@@ -3,10 +3,10 @@ body {
 }
 h1 {
   color: purple;
-  line-height: 25px;
+  line-height: 28px;
 }
 h3 {
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 0;
 }
 ul {
@@ -34,7 +34,7 @@ li {
   left: -10px;
 }
 #description {
-  font-size: 18px;
+  font-size: 20px;
   text-transform: capitalize;
 }
 #temp-degree {
