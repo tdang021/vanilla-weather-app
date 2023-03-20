@@ -17,6 +17,9 @@ li {
   list-style: none;
   font-size: 14px;
 }
+a {
+  text-decoration: none;
+}
 .weather-temperature img {
   margin-right: 6px;
 }
@@ -34,6 +37,12 @@ li {
   top: -18px;
   left: -10px;
 }
+
+.temp-setting .active {
+  color: black;
+  cursor: default;
+}
+
 #description {
   font-size: 20px;
   text-transform: capitalize;
