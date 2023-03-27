@@ -31,7 +31,8 @@ let minute = now.getMinutes();
 
 currentDate.innerHTML = `${day}, ${month} ${date} ${hour}:${minute}`;
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -50,6 +51,12 @@ function displayForecast() {
   });
   forecastHTML = forecastHTML + `</div`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "7a6tfo3aa33dcf22944a8db00a0bf65c";
+  let ApiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.lon}&lat=${coordinates.lat}&key=${apiKey}&units=imperial`;
+  axios.get(ApiUrl).then(displayForecast);
 }
 
 function displayTemperature(response) {
@@ -72,6 +79,8 @@ function displayTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -116,7 +125,6 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 search("Charleston");
-displayForecast();
 
 function changeLocalTemp(event) {
   function showPosition(position) {
