@@ -114,33 +114,10 @@ function newCity(event) {
   search(cityInput.value);
 }
 
-function showCelciusTemperature(event) {
-  event.preventDefault();
-  let celciusTemp = (fahrenheitTemperature - 32) * (5 / 9);
-  fahrenheitLink.classList.remove("active");
-  celciusLink.classList.add("active");
-  let temperatureElement = document.querySelector("#temp-degree");
-  temperatureElement.innerHTML = Math.round(celciusTemp);
-}
-
-function showFahrenheitTemperature(event) {
-  event.preventDefault();
-  let fahrenheitTemp = document.querySelector("#temp-degree");
-  celciusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  fahrenheitTemp.innerHTML = Math.round(fahrenheitTemperature);
-}
-
 let fahrenheitTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", newCity);
-
-let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", showCelciusTemperature);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 search("Charleston");
 
