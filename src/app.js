@@ -31,6 +31,27 @@ let minute = now.getMinutes();
 
 currentDate.innerHTML = `${day}, ${month} ${date} ${hour}:${minute}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+                <div class="forecast-day">${day}</div>
+                <img src="img/sun-cloud.png" class="forecast-icon" />
+                <div class="hi-low">
+                  <span class="foreccast-temp-min">57°</span>
+                  <span class="forecast-temp-max">72°</span>
+                </div>
+              </div>`;
+  });
+  forecastHTML = forecastHTML + `</div`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temp-degree");
   let cityElement = document.querySelector("#city");
@@ -95,6 +116,7 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 search("Charleston");
+displayForecast();
 
 function changeLocalTemp(event) {
   function showPosition(position) {
