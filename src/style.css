@@ -42,15 +42,18 @@ a {
   color: black;
   cursor: default;
 }
-.cloudy-day {
-  width: 60px;
+.weather-forecast {
+  text-align: center;
 }
-.forecast-days {
+.forecast-icon {
+  width: 40px;
+}
+.forecast-day {
   font-size: 16px;
   text-align: center;
 }
 .hi-low {
-  font-size: 11px;
+  font-size: 12px;
   text-align: center;
   line-height: 25px;
 }
